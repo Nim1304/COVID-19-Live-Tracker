@@ -7,7 +7,10 @@ const app=express();
 
 
 app.use('/',Index);
-
+app.use(express.json());
+app.use(express.urlencoded({
+    extended:true
+}))
 
 
 
