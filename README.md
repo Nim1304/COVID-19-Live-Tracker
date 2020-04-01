@@ -6,4 +6,4 @@
 
 ## Note
    The Data is based on https://www.worldometers.info
-   This is not an Funuctional Web App. It is just an API which will return the COVID-19 stats.
+   This is not a Functional Web App. It is just an API which will return the COVID-19 stats.
