@@ -3,6 +3,9 @@
     Open Localhost or any other URL
     The App will give response as an array of JSON Objects which contain information about the Number of cases.
 
+    OR
+    https://covid-19-live-api.herokuapp.com/
+
 
 ## Note
    The Data is based on https://www.worldometers.info
