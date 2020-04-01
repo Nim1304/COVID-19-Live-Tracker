@@ -1,12 +1,12 @@
 const express = require('express');
 
-
+const Index = require('./routes/index');
 
 const app=express();
 
 
 
-
+app.use('/',Index);
 
 
 
