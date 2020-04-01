@@ -1,0 +1,15 @@
+{
+  "name": "covid-19",
+  "version": "1.0.0",
+  "description": "COVID-19 Live Number of Cases API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nimish Shah",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1"
+  }
+}
