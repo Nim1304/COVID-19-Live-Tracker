@@ -9,7 +9,7 @@ route.get('/',(req,res)=>{
     }).catch((err)=>{
         res.send(err);
     });
-    
+
 });
 
 route.get('/yesterday',(req,res)=>{
