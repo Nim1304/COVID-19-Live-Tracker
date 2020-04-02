@@ -4,7 +4,7 @@ const getData = require('../db/data').getData;
 
 
 route.get('/',(req,res)=>{
-    getData.then((data)=>{
+    getData(false).then((data)=>{
         res.send(data);
     }).catch((err)=>{
         res.send(err);
@@ -12,5 +12,12 @@ route.get('/',(req,res)=>{
     
 });
 
+route.get('/yesterday',(req,res)=>{
+    getData(true).then((data)=>{
+        res.send(data);
+    }).catch((err)=>{
+        res.send(err);
+    });
+})
 
 module.exports = route;
