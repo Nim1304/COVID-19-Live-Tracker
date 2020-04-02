@@ -9,7 +9,7 @@ const keys = ["country", "totalCases", "newCases", "totalDeaths", "newDeaths", "
 
 const getData = (yesterday) => {
     var decider;
-    yestreday ? decider = "#main_table_countries_yesterday" : decider = "#main_table_countries_today"
+    yesterday ? decider = "#main_table_countries_yesterday" : decider = "#main_table_countries_today";
     return new Promise((resolve, reject) => {
         var endObject = []
         var intermediateObject = {}
