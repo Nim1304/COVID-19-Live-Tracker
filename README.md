@@ -4,6 +4,7 @@
     The App will give response as an array of JSON Objects which contain information about the Number of cases.
 
     localhost:5000/yesterday gives yesterday's numbers
+    
     OR
 
     https://covid-19-live-api.herokuapp.com/{yesterday}
