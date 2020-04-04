@@ -4,7 +4,7 @@ const cheerio = require('cheerio');
 const URL = 'https://www.worldometers.info/coronavirus/'
 
 const keys = ["country", "totalCases", "newCases", "totalDeaths", "newDeaths", "totalRecovered",
-    "activeCases", "serious", "casesPerMn", "deathsPerMn", "reportFirst"]
+    "activeCases", "serious", "casesPerMn", "deathsPerMn", "totalTests","testsPerMn"]
 
 
 const getData = (yesterday) => {
