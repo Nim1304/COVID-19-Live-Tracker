@@ -1,14 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-import Data from './'
+import Data from './component/dataCOVID.component';
 
 
 function App() {
   return (
     <div>
-
+      <Data />
     </div>
   );
 }

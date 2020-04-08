@@ -19,10 +19,11 @@ const getData = (yesterday) => {
                 $(decider).find('tr').each((i, trElement) => {
                     intermediateObject = {}
                     $(trElement).find('td').each((i, tdElement) => {
-                        keys[i] == 'reportFirst' ? intermediateObject[keys[i]] = $(tdElement).text().replace('\n', '') :
+                        keys[i] == 'totalDeaths' ? intermediateObject[keys[i]] = $(tdElement).text().replace(/ /g, '') :
                             intermediateObject[keys[i]] = $(tdElement).text();
                     })
                     endObject.push(intermediateObject);
+                    // console.log(typeof endObject);
                 });
                 endObject.length > 0 ? resolve(endObject) : reject(new Error('Server Not responding.Try after some time'));
             }
