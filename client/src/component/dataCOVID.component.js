@@ -11,15 +11,12 @@ const Country = (props) => {
     console.log(props.country.country, Deaths, Total, recPerc);
     return (
         <tr>
-            <div className="collapsible-header">
-                <td> {props.country.country} </td>
-                <td> {props.country.totalCases} </td>
-                <td> {props.country.totalRecovered} <span class="new badge" data-badge-caption="">{recPerc.toFixed(2)}</span></td>
-                <td> {props.country.totalDeaths} <span class="new badge red" data-badge-caption="">{deathPerc.toFixed(2)}</span></td>
-            </div>
-            <div className="collapsible-body">
-                {props.country.casesPerMn}
-            </div> 
+            <td> {props.country.country} </td>
+            <td> {props.country.totalCases} </td>
+            <td> {props.country.newCases.replace('+','') || '0'} </td>
+            <td> {props.country.totalDeaths} <span className="new badge red" data-badge-caption="">{deathPerc.toFixed(2)}</span></td>
+            <td> {props.country.newDeaths.replace('+','') || '0'} </td>
+            <td> {props.country.totalRecovered} <span className="new badge" data-badge-caption="">{recPerc.toFixed(2)}</span></td>
         </tr>
     )
 }
@@ -54,13 +51,15 @@ export default class Data extends Component {
     render() {
         return (
             <div>
-                <table>
+                <table className="highlight centered">
                     <thead>
                         <tr>
                             <th>Name</th>
                             <th>Total Cases</th>
-                            <th>Total Recovered</th>
+                            <th>New Cases</th>
                             <th>Total Deaths</th>
+                            <th>New Deaths</th>
+                            <th>Total Recovered</th>
                         </tr>
                     </thead>
 
