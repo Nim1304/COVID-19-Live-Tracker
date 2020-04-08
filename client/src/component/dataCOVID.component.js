@@ -15,7 +15,7 @@ const Country = (props) => {
             <td> {props.country.totalCases} </td>
             <td> {props.country.newCases.replace('+','') || '0'} </td>
             <td> {props.country.totalDeaths} <span className="new badge red" data-badge-caption="">{deathPerc.toFixed(2)}</span></td>
-            <td> {props.country.newDeaths.replace('+','') || '0'} </td>
+            <td style={{color:"red"}} > {props.country.newDeaths.replace('+','') || '0'} </td>
             <td> {props.country.totalRecovered} <span className="new badge" data-badge-caption="">{recPerc.toFixed(2)}</span></td>
         </tr>
     )
@@ -63,7 +63,7 @@ export default class Data extends Component {
                         </tr>
                     </thead>
 
-                    <tbody className="collapsible">
+                    <tbody id="filter">
                         {
                             this.buildTemplate()
                         }

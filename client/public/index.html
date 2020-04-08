@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
   <title>React App</title>
 </head>
@@ -11,7 +12,16 @@
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
-  
+  <script>
+    $(document).ready(function(){
+      $("#search").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#filter tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+    </script>
   <script src="js/materialize.min.js"></script>
 </body>
 
