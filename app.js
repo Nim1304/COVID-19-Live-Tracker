@@ -1,5 +1,5 @@
 const express = require('express');
-
+const cors = require('cors');
 const Index = require('./routes/index');
 
 const app=express();
