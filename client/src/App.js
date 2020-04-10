@@ -6,7 +6,7 @@ import MenuBar from './component/menuBar.component';
 
 function App() {
   return (
-    <div>
+    <div id="container">
       <div id="menu">
         <MenuBar />
       </div>

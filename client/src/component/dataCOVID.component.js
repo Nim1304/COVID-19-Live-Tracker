@@ -51,7 +51,7 @@ export default class Data extends Component {
     render() {
         return (
             <div>
-                <table className="highlight centered">
+                <table className="highlight centered #212121 grey darken-4" style={{color:"white"}}>
                     <thead>
                         <tr>
                             <th>Name</th>

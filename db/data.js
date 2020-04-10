@@ -16,6 +16,9 @@ const getData = (yesterday) => {
         request(URL, (err, result, html) => {
             if (!err) {
                 const $ = cheerio.load(html);
+                $('.row_continent').each((i,element)=>{
+                    $(element).remove();
+                });
                 $(decider).find('tr').each((i, trElement) => {
                     intermediateObject = {}
                     $(trElement).find('td').each((i, tdElement) => {

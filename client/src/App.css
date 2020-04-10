@@ -37,7 +37,8 @@
   }
 }
 
-.menu {
-  margin: 10px;
-  max-width: 300px;
+#container{
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
