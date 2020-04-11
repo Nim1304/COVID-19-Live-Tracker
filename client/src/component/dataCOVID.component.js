@@ -32,7 +32,7 @@ export default class Data extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3000/').then((res) => {
+        axios.get('getData/').then((res) => {
             this.setState({ data: res.data });
             console.log(this.state.data);
         }).catch(err => console.log(err));
