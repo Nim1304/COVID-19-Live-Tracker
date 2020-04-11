@@ -27,12 +27,15 @@ export default class Data extends Component {
         super(props);
 
         this.state = {
+            yesterday: props.yesterday,
             data: []
         }
     }
 
     componentDidMount() {
-        axios.get('getData/').then((res) => {
+        let route;
+        this.state.yesterday ? route = "getData/yesterday" : route = "getData/" ;
+        axios.get(route).then((res) => {
             this.setState({ data: res.data });
             console.log(this.state.data);
         }).catch(err => console.log(err));

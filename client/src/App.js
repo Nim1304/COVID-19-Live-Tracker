@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route} from "react-router-dom";
 import './App.css';
 
 import Data from './component/dataCOVID.component';
@@ -10,7 +11,8 @@ function App() {
       <div id="menu">
         <MenuBar />
       </div>
-      <Data />
+      <Route path="/" exact component={<Data yesterday={false} />} />
+      <Route path="/yesterday" component={<Data yesterday={true} />} />
     </div>
   );
 }
