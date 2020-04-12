@@ -8,7 +8,6 @@ const Country = (props) => {
     var Total = parseFloat((props.country.totalCases || '0').replace(/,/g, ''));
     var recPerc = Recovered / Total * 100;
     var deathPerc = Deaths / Total * 100;
-    console.log(props.country.country, Deaths, Total, recPerc);
     return (
         <tr>
             <td> {props.country.country} </td>
@@ -35,7 +34,6 @@ export default class Data extends Component {
     componentDidMount() {
         axios.get(`getData${this.state.yesterday ? '/yesterday' : '/'}`).then((res) => {
             this.setState({ data: res.data });
-            console.log(this.state.data);
         }).catch(err => console.log(err));
     }
 
