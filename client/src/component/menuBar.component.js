@@ -16,7 +16,7 @@ export default class MenuBar extends Component {
                         <i className="material-icons">close</i>
                     </div>
                     <ul id="nav-mobile" className="right" style={{marginRight:"100px"}}>
-                        <li><a href="https://github.com/Nim1304/COVID-19-Live-Tracker">Click->API</a></li>
+                        <li><a href="https://github.com/Nim1304/COVID-19-Live-Tracker/blob/master/db/data.js">Click->API</a></li>
                     </ul>
                 </div>
             </nav>
