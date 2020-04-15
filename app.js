@@ -23,7 +23,7 @@ setInterval(() => {
         // console.log(data);
         fs.writeFile('data.json', JSON.stringify(data), (err) => {
             if (err) throw err;
-            console.log('written');
+            console.log('awritten');
         });
     }).catch(err => console.log(err));
 }, 300000);
