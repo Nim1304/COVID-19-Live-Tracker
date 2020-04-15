@@ -26,7 +26,7 @@ setInterval(() => {
             console.log('awritten');
         });
     }).catch(err => console.log(err));
-}, 300000);
+}, 60000);
 
 setInterval(() => {
     getData(true).then((data) => {
@@ -36,7 +36,7 @@ setInterval(() => {
             console.log('written');
         });
     }).catch(err => console.log(err));
-}, 300000);
+}, 60000);
 
 const PORT = process.env.PORT || 3000 
 app.listen(PORT,()=>{
