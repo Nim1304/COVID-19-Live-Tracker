@@ -11,7 +11,7 @@ const getData = (yesterday) => {
     var decider;
     yesterday ? decider = "#main_table_countries_yesterday" : decider = "#main_table_countries_today";
     return new Promise((resolve, reject) => {
-        var endObject = []
+        var endObject = {data:[]}
         var intermediateObject = {}
         request(URL, (err, result, html) => {
             if (!err) {
@@ -25,10 +25,10 @@ const getData = (yesterday) => {
                         keys[i] == 'totalDeaths' ? intermediateObject[keys[i]] = $(tdElement).text().replace(/ /g, '') :
                             intermediateObject[keys[i]] = $(tdElement).text();
                     })
-                    endObject.push(intermediateObject);
+                    endObject['data'].push(intermediateObject);
                     // console.log(typeof endObject);
                 });
-                endObject.length > 0 ? resolve(endObject) : reject(new Error('Server Not responding.Try after some time'));
+                endObject.data.length > 0 ? resolve(endObject) : reject(new Error('Server Not responding.Try after some time'));
             }
         });
     });

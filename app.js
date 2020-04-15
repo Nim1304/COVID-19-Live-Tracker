@@ -17,7 +17,25 @@ app.get('*',(req,res)=>{
     res.sendFile(path.resolve(__dirname,'client','build','index.html'))
 });
 
+setInterval(() => {
+    getData(false).then((data) => {
+        // console.log(data);
+        fs.writeFile('data.json', JSON.stringify(data), (err) => {
+            if (err) throw err;
+            console.log('written');
+        });
+    }).catch(err => console.log(err));
+}, 3600000);
 
+setInterval(() => {
+    getData(true).then((data) => {
+        // console.log(data);
+        fs.writeFile('dataYesterday.json', JSON.stringify(data), (err) => {
+            if (err) throw err;
+            console.log('written');
+        });
+    }).catch(err => console.log(err));
+}, 3600000);
 
 const PORT = process.env.PORT || 3000 
 app.listen(PORT,()=>{
