@@ -21,7 +21,7 @@ app.get('*',(req,res)=>{
 setInterval(() => {
     getData(false).then((data) => {
         console.log(data);
-        fs.writeFile('data.json', JSON.stringify(data), (err) => {
+        fs.writeFile('./data.json', JSON.stringify(data), (err) => {
             if (err) throw err;
             console.log('awritten');
         });
@@ -31,7 +31,7 @@ setInterval(() => {
 setInterval(() => {
     getData(true).then((data) => {
         //console.log(data);
-        fs.writeFile('dataYesterday.json', JSON.stringify(data), (err) => {
+        fs.writeFile('./dataYesterday.json', JSON.stringify(data), (err) => {
             if (err) throw err;
             console.log('written');
         });
