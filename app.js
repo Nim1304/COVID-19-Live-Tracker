@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const fs = require('fs');
 const Index = require('./routes/index');
 
 const app=express();
@@ -25,7 +26,7 @@ setInterval(() => {
             console.log('written');
         });
     }).catch(err => console.log(err));
-}, 3600000);
+}, 300000);
 
 setInterval(() => {
     getData(true).then((data) => {
@@ -35,7 +36,7 @@ setInterval(() => {
             console.log('written');
         });
     }).catch(err => console.log(err));
-}, 3600000);
+}, 300000);
 
 const PORT = process.env.PORT || 3000 
 app.listen(PORT,()=>{
