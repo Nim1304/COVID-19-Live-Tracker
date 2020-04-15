@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({
     extended:true
 }));
-app.use(express.static(__dirname));
+// app.use(express.static(__dirname));
 app.use(express.static('client/build'));
 app.get('*',(req,res)=>{
     res.sendFile(path.resolve(__dirname,'client','build','index.html'))
@@ -21,7 +21,7 @@ app.get('*',(req,res)=>{
 
 setInterval(() => {
     getData(false).then((data) => {
-        console.log(data.data[1]);
+        // console.log(data.data[1]);
         fs.writeFile('./data.json', JSON.stringify(data), (err) => {
             if (err) throw err;
             console.log('awritten');

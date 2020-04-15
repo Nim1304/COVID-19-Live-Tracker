@@ -1,10 +1,14 @@
 const express = require('express')
 const route = express.Router();
 // const getData = require('../db/data').getData;
-
+const fs = require('fs');
 route.get('/',(req,res)=>{
-    const data = require('../data.json').data;
-    res.send(data);
+
+    // var data = require('../data.json').data;
+    fs.readFile('data.json',(err,data)=>{
+        if(err) console.log(err);
+        res.send(JSON.parse(data).data);
+    })
 });
 
 route.get('/yesterday',(req,res)=>{
@@ -13,8 +17,10 @@ route.get('/yesterday',(req,res)=>{
     // }).catch((err)=>{
     //     res.send(err);
     // });
-    const dataYes = require('../dataYesterday.json').data;
-    res.send(dataYes);
+    fs.readFile('dataYesterday.json',(err,data)=>{
+        if(err) console.log(err);
+        res.send(JSON.parse(data).data);
+    })
 })
 
 module.exports = route;
