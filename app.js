@@ -19,6 +19,22 @@ app.get('*',(req,res)=>{
     res.sendFile(path.resolve(__dirname,'client','build','index.html'))
 });
 
+getData(false).then((data) => {
+    // console.log(data.data[1]);
+    fs.writeFile('./data.json', JSON.stringify(data), (err) => {
+        if (err) throw err;
+        console.log('awrittens');
+    });
+}).catch(err => console.log(err));
+
+getData(true).then((data) => {
+    // console.log(data.data[1]);
+    fs.writeFile('./dataYesterday.json', JSON.stringify(data), (err) => {
+        if (err) throw err;
+        console.log('writtens');
+    });
+}).catch(err => console.log(err));
+
 setInterval(() => {
     getData(false).then((data) => {
         // console.log(data.data[1]);
