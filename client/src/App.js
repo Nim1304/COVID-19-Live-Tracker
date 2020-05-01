@@ -4,12 +4,14 @@ import './App.css';
 
 import Data from './component/dataCOVID.component';
 import MenuBar from './component/menuBar.component';
+import India from './component/india.component';
 
 function App() {
   return (
     <Router>
       <div id="container">
         <div id="menu">
+          <India />
           <MenuBar />
         </div>
         <Route path="/" exact component={(props) => <Data yesterday={false} />} />
