@@ -11,7 +11,7 @@ function App() {
     <Router>
       <div id="container">
         <div id="menu">
-          <India />
+          {/* <India /> */}
           <MenuBar />
         </div>
         <Route path="/" exact component={(props) => <Data yesterday={false} />} />
